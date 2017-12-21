@@ -1,0 +1,37 @@
+/*
+L10
+What about abstract/interface?: Y, we can.
+//can have two generics<S, T>
+public class Box<T>
+{
+    T ITEM;
+        public Box(T item)
+        {
+            this.item = item;
+        }
+}
+
+Iterator interface
+hasNext()
+next()
+when implement interface must have the two above, but can be implemented differently
+default remove()
+when implement default, it will already have had
+
+while(iterator.hasNext())
+{
+    a = iterator.next();
+}
+
+enhance for loop
+
+ArrayList<Point> a = newArrayList<Point>();
+for(Point x: a)
+{
+    print(x);
+}
+
+// a has to implement Iterable
+iterator()
+return an iterator obj
+ */

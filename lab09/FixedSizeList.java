@@ -65,22 +65,12 @@ public class FixedSizeList implements SimpleList {
      */
     public void remove(int k) {
         // YOUR CODE HERE
-        // Q1 hot to remove in the new though?
-        /*if(contains(k))
-        {
-            for(int i = 0; i < count; i++)
-            {
-                removeIndex(i);
-            }
-        }*/
         int i = 0;
-        while ((get(i) != k) && (i < count)) // test failed
+        while ((get(i) != k) && (i < count)) 
         {
             i++;
-            // System.out.println(i);
         }
         if ((get(i) == k) && (i < count)) {
-            // System.out.println("before the removeIndex call");
             removeIndex(i);
         }
     }
@@ -89,17 +79,12 @@ public class FixedSizeList implements SimpleList {
      * Returns if the collection contains k.
      */
 
-    //Q1 collection not list?
     public boolean contains(int k) {
         // YOUR CODE HERE
         for (int i = 0; i < count; i++) {
             if (values[i] == k) {
                 return true;
             }
-            /*else
-            {
-                return false;
-            }*/
         }
         return false;
     }
@@ -109,18 +94,9 @@ public class FixedSizeList implements SimpleList {
      */
     public int get(int i) {
         // YOUR CODE HERE
-        /*try
-        {
-            return values[i]; // array out of bound error
-        }catch(ListException e){
-            System.err.println("Index: " +i + " does not exist.");
-            throw new IllegalArgumentException();
-
-        }*/
         if (i >= count || i < 0) {
             throw new ListException("Index: " + i + " does not exist.");
         } else {
-            // test failed
             return values[i];
         }
 
@@ -133,18 +109,6 @@ public class FixedSizeList implements SimpleList {
      */
     public void add(int i, int k) {
         // It can be at any i in the capacity though if might not be contributed to the list if i >= count+1
-        /*try
-        {
-            for (int j = count; j > i; j--)
-            {
-                values[j] = values[j - 1];
-            }
-            values[i] = k;
-            count++;
-        }catch(ListException e)
-        {
-            System.err.println("Index: " +i + " does not exist.");
-        }*/
         if (count + 1 <= values.length)
         {
             if (i >= 0 && i < count + 1)
@@ -170,19 +134,11 @@ public class FixedSizeList implements SimpleList {
      * i one entry to the left.
      */
 
-    // Q2: Not in the list?
     public void removeIndex(int i) {
         // YOUR CODE HERE
-        //System.out.println("removeIndex is called");
         // from 2 to 1
-
-        //System.out.println(count);
         try {
             for (int k = i; k < count-1; k++) {
-                // k = 1
-                //System.out.println(values[k]);
-                //System.out.println(values[k+1]);
-                // values[1] = values[2]
                 values[k] = values[k + 1];
             }
             values[count-1] = 0;
@@ -203,11 +159,6 @@ public class FixedSizeList implements SimpleList {
             a.add(i);
         }
         a.add(6, 10);
-        //System.out.println(a.get(0));
-        //System.out.println(a.get(1));
-        //System.out.println(a.values);
         System.out.println(Arrays.toString(a.values));
-        //a.remove(2);
-        //System.out.println(Arrays.toString(a.values));
     }
 }

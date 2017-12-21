@@ -18,18 +18,6 @@ public class BooleanSet implements SimpleSet {
 	 */
 	public void add(int k) {
 		// YOUR CODE HERE
-		/*
-		try
-		{
-			if(!contains[k])
-			{
-				contains[k] = true;
-			}
-		}catch(IllegalArgumentException e)
-		{
-			system.err.println("Illegal input" + k);
-		}
-		*/
 
 		if(k >= 0 && k < contains.length)
 		{

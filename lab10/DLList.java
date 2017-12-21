@@ -214,6 +214,7 @@ public class DLList<T> implements Iterable<T>{
         l.insertBack("ow~!");
         System.out.println(l.get(0) + l.get(1));
     }
+    // Local test
     /*public static void main(String[] args) {
         DLList<String> l = new DLList<String>();
         l.insertBack("CS");

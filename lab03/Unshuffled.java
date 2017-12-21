@@ -9,7 +9,8 @@ public class Unshuffled
         if (x > 2) {
             System.out.print("a");
         }
-        while (x > 0) {
+        while (x > 0)
+        {
             x = x - 1;
             System.out.print("-");
             if (x == 2)
@@ -20,10 +21,7 @@ public class Unshuffled
             {
                 System.out.print("d");
                 x = x - 1;
-
-
-        }
-
+            }
         }
     }
 }

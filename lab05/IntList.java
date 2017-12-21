@@ -122,7 +122,7 @@ public class IntList {
         IntList list = this;
         if(obj.getClass() == IntList.class)
         {
-            //istanceof
+            //instance of
             IntList object = (IntList)obj;
             if (object.size() == list.size())
             {
@@ -215,7 +215,6 @@ public class IntList {
      */
     public static IntList append(IntList l1, IntList l2) {
         // YOUR CODE HERE
-        // recursive?
         IntList l3;
         if(l1 != null) {
             l3 = new IntList(l1.item);

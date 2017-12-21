@@ -56,7 +56,7 @@ public class Measurement {
 	public Measurement plus(Measurement m2)
 	{
 		return new Measurement(this.getFeet()+m2.getFeet(),this.getInches()+m2.getInches());
-		// provided to allow the file to compile
+
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class Measurement {
 
 		}
 		return new Measurement(this.getFeet()-m2.getFeet(),this.getInches()-m2.getInches());
-		// provided to allow the file to compile
+
 	}
 
 	/**
@@ -84,7 +84,6 @@ public class Measurement {
 	public Measurement multiple(int multipleAmount)
 	{
 		return new Measurement(multipleAmount*(this.getFeet()),multipleAmount*(this.getInches()));
-		// provided to allow the file to compile
 	}
 
 	/**
@@ -98,7 +97,7 @@ public class Measurement {
 	{
 		String s = new String();
 		s = this.getFeet()+"'"+this.getInches()+"\"";
-		return s; // provided to allow the file to compile
+		return s;
 	}
 
 

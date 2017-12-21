@@ -9,30 +9,11 @@ public class XsBeforeOs {
             if (values[k] == 'X')
             {
 
-                // YOUR CODE HERE
                 lastXpos = k;
 
-                /*if(  values[k+1] == 'O')//lastXpos?
-                {
-                    for(int i = k+1; i < values.length; i++)
-                    {
-                        if(values[i] == 'X')
-                        {
-                            values[k+1] = 'X';
-                            values[i] = 'O';
-                        }
-                    }
-                }*/
-
-                /*for(int i = lastXpos+1; i < values.length; i++)
-                {
-                    if(values[i] == '')
-                }*/
             }
             else
             {
-
-
                 int i = k + 1;
                 if (i < values.length - 1)
                 {
@@ -47,11 +28,7 @@ public class XsBeforeOs {
                     }
 
                 }
-
-
             }
-
-
             try
             {
                 isOK(values, k);
@@ -66,13 +43,10 @@ public class XsBeforeOs {
     // consistent.
     public static void isOK (char[] values, int k) {
 
-        // YOUR CODE HERE
-        //int firstO;
         for(int i = 0; i < k+1; i++)
         {
             if(values[i] == 'O')
             {
-                //firstO = i;
                 for (int j = i+1; j < k+1; j++)
                 {
                     if(values[j] == 'X')
@@ -86,40 +60,3 @@ public class XsBeforeOs {
     }
 }
 
-/*
-L10
-What about abstract/interface?: Y, we can.
-//can have two generics<S, T>
-public class Box<T>
-{
-    T ITEM;
-        public Box(T item)
-        {
-            this.item = item;
-        }
-}
-
-Iterator interface
-hasNext()
-next()
-when implement interface must have the two above, but can be implemented differently
-default remove()
-when implement default, it will already have had
-
-while(iterator.hasNext())
-{
-    a = iterator.next();
-}
-
-enhance for loop
-
-ArrayList<Point> a = newArrayList<Point>();
-for(Point x: a)
-{
-    print(x);
-}
-
-// a has to implement Iterable
-iterator()
-return an iterator obj
- */

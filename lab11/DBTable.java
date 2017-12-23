@@ -57,9 +57,11 @@ public class DBTable<T> {
      */
     public <R extends Comparable<R>> List<T> getOrderedBy(Function<T, R> getter)
     {
+        /* Lambda Solution without Comparator.comparing()
         List<T> result = getEntries();
-        Collections.sort(result, (e1, e2) -> getter.apply(e1).compareTo(getter.apply(e2))); // FIX ME
-        return result;
+        Collections.sort(result, (e1, e2) -> getter.apply(e1).compareTo(getter.apply(e2)));
+        return result;*/
+        
     }
 
     /**

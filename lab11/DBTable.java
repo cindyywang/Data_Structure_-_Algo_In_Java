@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.function.Function;
+import java.util.Collections;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -56,7 +57,9 @@ public class DBTable<T> {
      */
     public <R extends Comparable<R>> List<T> getOrderedBy(Function<T, R> getter)
     {
-        return null; // FIX ME
+        List<T> result = getEntries();
+        Collections.sort(result, (e1, e2) -> getter.apply(e1).compareTo(getter.apply(e2))); // FIX ME
+        return result;
     }
 
     /**
@@ -83,6 +86,15 @@ public class DBTable<T> {
 
     public static void main(String[] args) {
         /* Basic test DB */
+        DBTable<User> a = new DBTable<>(Arrays.asList(
+                new User(2, "christine", ""),
+                new User(4, "antares", ""),
+                new User(1, "dan", ""),
+                new User(1, "daniel", ""),
+                new User(5, "ching", "")
+        ));
+        List<User> l = a.getOrderedBy(User::getUsername);
+        System.out.println(l);
         DBTable<User> t = new DBTable<>(Arrays.asList(
                 new User(2, "daniel", "dando@gmail.com"),
                 new User(3, "matt", "italy@gmail.com"),

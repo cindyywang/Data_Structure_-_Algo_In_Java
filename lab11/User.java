@@ -68,42 +68,36 @@ public class User implements Comparable<User> {
     @Override
     public boolean equals(Object o)
     {
-        if(o.equals(age))
+        if(!(o instanceof User))
         {
-            return true;
+            return false;
         }
-        else if(o.equals(id))
+        User temp = (User)o;
+
+        if(temp.age != age)
         {
-            return true;
+            return false;
         }
-        else if(o.equals(username))
+        else if(temp.id != id)
         {
-            return true;
+            return false;
         }
-        else if(o.equals(email))
+        else if(!temp.username.equals(username))
         {
-            return true;
+            return false;
+        }
+        else if(!temp.email.equals(email))
+        {
+            return false;
         }
         else
         {
-            return false;
-        }// FIX ME
+            return true;
+        }
     }
 
     public int compareTo(User u)
     {
-        /*if(//u.equals(age) && u.equals(username) && u.equals(email) && //u.equals(id))
-        {
-            if(u.equals(username))
-            {
-                return 0;
-            }
-        }
-        else
-        {
-
-        }
-        */
         if(id == u.getId())
         {
             if(u.equals(username))
@@ -125,6 +119,7 @@ public class User implements Comparable<User> {
         User[] users = {new User(2, "christine", ""), new User(4, "antares", ""), new User(5, "ching", ""),
                 new User(1, "daniel", ""), new User(1, "dan", "")};
         Arrays.sort(users);
+        System.out.println(users[1].equals(users[0]));
         System.out.println(Arrays.toString(users));
     }
 }

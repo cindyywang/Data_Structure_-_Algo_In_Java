@@ -71,9 +71,6 @@ public class CubeModel extends Observable {
                 if (painted[i][j]) {
                     gridPainted[i][j] = true;
                 } else {
-//                    System.out.println(i);
-//                    System.out.println(j);
-
                     gridPainted[i][j] = false;
                 }
             }
@@ -134,8 +131,6 @@ public class CubeModel extends Observable {
             if (((((row - rowCube) == 1) || ((rowCube - row) == 1))
                     && (col == colCube)) || ((row == rowCube)
                     && (((col - colCube) == 1) || ((colCube - col) == 1)))) {
-                // rowCube = row;
-                // colCube = col;
                 if ((row - rowCube) == 1) {
                     cubePainted[4] = copy.isPaintedFace(1);
                     cubePainted[5] = copy.isPaintedFace(0);
@@ -169,7 +164,6 @@ public class CubeModel extends Observable {
                 }
                 System.out.println("Done");
 
-                //if (!gridPainted[row][col]) {
                 // transfer the color
                 rowCube = row;
                 colCube = col;
@@ -199,28 +193,28 @@ public class CubeModel extends Observable {
 
     /** Return the number of squares on a side. */
     public int side() {
-        return size; // FIXME
+        return size;
     }
 
     /** Return true iff square ROW, COL is painted.
      *  Requires 0 <= ROW, COL < board size. */
     public boolean isPaintedSquare(int row, int col) {
-        return (gridPainted[row][col]); // FIXME
+        return (gridPainted[row][col]);
     }
 
     /** Return current row of cube. */
     public int cubeRow() {
-        return rowCube; // FIXME
+        return rowCube;
     }
 
     /** Return current column of cube. */
     public int cubeCol() {
-        return colCube; // FIXME
+        return colCube;
     }
 
     /** Return the number of moves made on current puzzle. */
     public int moves() {
-        return numOfMove; // FIXME
+        return numOfMove;
     }
 
     /** Return true iff face #FACE, 0 <= FACE < 6, of the cube is painted.
@@ -233,7 +227,7 @@ public class CubeModel extends Observable {
      *    5: Top face.
      */
     public boolean isPaintedFace(int face) {
-        return cubePainted[face]; // FIXME
+        return cubePainted[face];
     }
 
     /** Return true iff all faces are painted. */
@@ -243,127 +237,6 @@ public class CubeModel extends Observable {
                 return false;
             }
         }
-        return true; // FIXME
-    }
-
-    // ADDITIONAL FIELDS AND PRIVATE METHODS HERE, AS NEEDED.
-
-
-
-}
-/*
-Lab11
- */
-
-/*
-public abstract class Animal
-{
-    int size;
-    String name;
-    public Animal()
-    {
-
+        return true;
     }
 }
-
-public class Fish extends Animal
-{
-    public Fish(int size String name)
-    {
-
-     super();
-    }
-}
- */
-
-/*
-
-Box<Integer> a = new Box(1);
-Box<Integer> b = new Box(1);
-a == b;
-
-public boolean equals(To)
-{
-    compare my item w/o's item
-    return 1==2;
-}
- */
-
-/*
-To sort List
-3 2 0 1
-0 1 2 3
-Fisha > Fishb
-Two new interfaces: Comparable && Comparator
-Collections.sort(a);
-Fisha, Fishb, Fishc
-
-Comparable:
--compareTo(T o)
-return this.size-o,size
--1 this < 0
-0 this == 0
-1 this > 0
-
-Collections.sort(b, new Fish())
-Comparator Interface
--compare(T o1, T o2)
-public class Fish(implements, comparator)
-compare(____);
-
-IDK
-
-
-Java8
-
-Higher Order function == HOF
-map: square each element in a list
--have each element
-
-define a func interface
-Have class defined in this interface
-
- //python
- // map(square, list)
- //define square
-
- lambda functions
-    (args) -> (return value)
-    (Integer i, integer j) -> (i+j;)
-
- Another way for lambda:
- Method references
- Fish::getSize
-
- Q: let map be in an interface such that we can implement it for any class we want?
- // functional interface? line 208
-
- Collections.sort(b, new Fish());
- //Comparator Method
- //No longer needed, let's do Fish::compare
-
- (f1, f2) -> (f1.size - f.size)
-
- functional interface : only one method
-
-Streams
--assembly line w/stations
-independent
-
--intermediate: map
-flatMap // look at the doc
-filter // eg.filter(size == 1)
-sorted// eg.sorted()// sorted(comparator)
-
--terminal:
-//transfer the stream back to ADT
-collect
-for Each
-reduce
-allMatch, anyMatch
-
-
-
- method references
- READ JAVADOCS
- */

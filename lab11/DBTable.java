@@ -92,3 +92,121 @@ public class DBTable<T> {
         System.out.println("t = " + t.groupByWhitelist(User::getId, Arrays.asList(1, 2)));
     }
 }
+
+/*
+Lab11
+ */
+
+/*
+public abstract class Animal
+{
+    int size;
+    String name;
+    public Animal()
+    {
+
+    }
+}
+
+public class Fish extends Animal
+{
+    public Fish(int size String name)
+    {
+
+     super();
+    }
+}
+ */
+
+/*
+
+Box<Integer> a = new Box(1);
+Box<Integer> b = new Box(1);
+a == b;
+
+public boolean equals(To)
+{
+    compare my item w/o's item
+    return 1==2;
+}
+ */
+
+/*
+To sort List
+3 2 0 1
+0 1 2 3
+Fisha > Fishb
+Two new interfaces: Comparable && Comparator
+Collections.sort(a);
+Fisha, Fishb, Fishc
+
+Comparable:
+-compareTo(T o)
+return this.size-o,size
+-1 this < 0
+0 this == 0
+1 this > 0
+
+Collections.sort(b, new Fish())
+Comparator Interface
+-compare(T o1, T o2)
+public class Fish(implements, comparator)
+compare(____);
+
+IDK
+
+
+Java8
+
+Higher Order function == HOF
+map: square each element in a list
+-have each element
+
+define a func interface
+Have class defined in this interface
+
+ //python
+ // map(square, list)
+ //define square
+
+ lambda functions
+    (args) -> (return value)
+    (Integer i, integer j) -> (i+j;)
+
+ Another way for lambda:
+ Method references
+ Fish::getSize
+
+ Q: let map be in an interface such that we can implement it for any class we want?
+ // functional interface? line 208
+
+ Collections.sort(b, new Fish());
+ //Comparator Method
+ //No longer needed, let's do Fish::compare
+
+ (f1, f2) -> (f1.size - f.size)
+
+ functional interface : only one method
+
+Streams
+-assembly line w/stations
+independent
+
+-intermediate: map
+flatMap // look at the doc
+filter // eg.filter(size == 1)
+sorted// eg.sorted()// sorted(comparator)
+
+-terminal:
+//transfer the stream back to ADT
+collect
+for Each
+reduce
+allMatch, anyMatch
+
+
+
+ method references
+ READ JAVADOCS
+ */
+

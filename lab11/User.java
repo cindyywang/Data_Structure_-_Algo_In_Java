@@ -98,20 +98,13 @@ public class User implements Comparable<User> {
 
     public int compareTo(User u)
     {
-        if(id == u.getId())
+        if(id == u.id)
         {
-            if(u.equals(username))
-            {
-                return 0;
-            }
-            else
-            {
-                return username.compareTo(u.getUsername());
-            }
+            return username.compareTo(u.username);
         }
         else
         {
-            return id-u.getId();
+            return id - u.id;
         }
     }
 
@@ -119,7 +112,8 @@ public class User implements Comparable<User> {
         User[] users = {new User(2, "christine", ""), new User(4, "antares", ""), new User(5, "ching", ""),
                 new User(1, "daniel", ""), new User(1, "dan", "")};
         Arrays.sort(users);
-        System.out.println(users[1].equals(users[0]));
+        System.out.println(users[0].equals(users[0]));
+        System.out.println(users[0].compareTo(users[0]));
         System.out.println(Arrays.toString(users));
     }
 }

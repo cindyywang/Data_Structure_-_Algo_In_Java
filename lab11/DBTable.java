@@ -57,11 +57,22 @@ public class DBTable<T> {
      */
     public <R extends Comparable<R>> List<T> getOrderedBy(Function<T, R> getter)
     {
-        /* Lambda Solution without Comparator.comparing()
+
         List<T> result = getEntries();
-        Collections.sort(result, (e1, e2) -> getter.apply(e1).compareTo(getter.apply(e2)));
-        return result;*/
-        
+
+        // Solution 1 : Tedious Lambda Solution without Comparator.comparing()
+        // Collections.sort(result, (e1, e2) -> getter.apply(e1).compareTo(getter.apply(e2)));
+
+        // Solution 2 : Lambda Solution simplified with Comparator.comparing()
+        Collections.sort(result, Comparator.comparing(e -> getter.apply(e)));
+
+        // Q1 Solution 3 : stream solution with return mutated type problem with T
+        /*return entries.stream()
+                .map(s -> getter.apply(s))
+                .sorted(R::compareTo)
+                .collect(Collectors.toList());*/
+        return result;
+
     }
 
     /**
@@ -74,6 +85,7 @@ public class DBTable<T> {
      * All keys present in this DB as obtained by the getter and in the whitelist are allowed.
      */
     public <R> Map<R, List<T>> groupByWhitelist(Function<T, R> getter, Collection<R> whitelist) {
+
         return null; // FIX ME
     }
 
@@ -83,7 +95,10 @@ public class DBTable<T> {
      * DBTable<String> names = table.getSubtableOf(User::getUsername);
      */
     public <R> DBTable<R> getSubtableOf(Function<T, R> getter) {
-        return null; // FIX ME
+        // Q2 doesn't work
+        return entries.stream()
+                .map(s -> getter.apply(s))
+                .collect(Collectors.toCollection(DBTable<R>::new)); // FIX ME
     }
 
     public static void main(String[] args) {
